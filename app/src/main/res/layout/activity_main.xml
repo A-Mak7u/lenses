@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Сегодняшняя дата -->
+    <TextView
+        android:id="@+id/todayDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сегодняшняя дата"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/setdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Установленная дата"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Дата + 2 недели -->
+    <TextView
+        android:id="@+id/twoWeeksLater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дата + 2 недели"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp" />
+
+    <!-- Кнопка для установки даты -->
+    <Button
+        android:id="@+id/setDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Установить сегодняшнюю дату"
+        android:layout_marginTop="240dp" />
+
+
+
+</LinearLayout>
