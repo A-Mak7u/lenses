@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
             calculateTwoWeeksLater(savedDate, twoWeeksLaterView)
         }
 
-        // Установка сегодняшней даты и сохранение
+        // Установка сегодняшней даты и сохранение треш
         setDateButton.setOnClickListener {
             val currentDate = today.format(formatter)
             setdate.text = "Дата установки: $currentDate"
