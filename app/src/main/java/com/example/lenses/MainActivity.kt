@@ -24,9 +24,8 @@ class MainActivity : ComponentActivity() {
         // Инициализация SharedPreferences
         sharedPreferences = getSharedPreferences("LensCyclePrefs", MODE_PRIVATE)
 
-        // Отображение сегодняшней даты
-        val today = LocalDate.now()
-        todayDateView.text = "Сегодня: ${today.format(formatter)}"
+
+        updateTodayDate(todayDateView)
 
         // Загрузка сохраненной даты, если она есть
         val savedDate = sharedPreferences.getString("savedDate", null)
@@ -37,13 +36,25 @@ class MainActivity : ComponentActivity() {
 
         // Установка сегодняшней даты и сохранение треш
         setDateButton.setOnClickListener {
-            val currentDate = today.format(formatter)
+            val currentDate = LocalDate.now().format(formatter)
             setdate.text = "Дата установки: $currentDate"
             saveDate(currentDate)
             calculateTwoWeeksLater(currentDate, twoWeeksLaterView)
         }
 
 
+    }
+
+    // Метод для обновления сегодняшней даты при каждом входе
+    override fun onResume() {
+        super.onResume()
+        val todayDateView: TextView = findViewById(R.id.todayDate)
+        updateTodayDate(todayDateView)
+    }
+
+    private fun updateTodayDate(todayDateView: TextView) {
+        val today = LocalDate.now() // Получение текущей даты
+        todayDateView.text = "Сегодня: ${today.format(formatter)}" // Отображение текущей даты
     }
 
     private fun saveDate(date: String) {
