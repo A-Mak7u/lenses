@@ -1,5 +1,6 @@
 package com.example.lenses
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,7 @@ class MainActivity : ComponentActivity() {
     lateinit var sharedPreferences: SharedPreferences
     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd") // формат без года
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +22,10 @@ class MainActivity : ComponentActivity() {
         val setdate: TextView = findViewById(R.id.setdate)
         val twoWeeksLaterView: TextView = findViewById(R.id.twoWeeksLater)
         val setDateButton: Button = findViewById(R.id.setDateButton)
+        val lastcock: TextView = findViewById(R.id.lastcock)
+        val lastcock_button: Button = findViewById(R.id.lastcock_button)
+        val lastcock_p: TextView = findViewById(R.id.lastcock_p)
+        val lastcock_p_button: Button = findViewById(R.id.lastcock_p_button)
 
         // Инициализация SharedPreferences
         sharedPreferences = getSharedPreferences("LensCyclePrefs", MODE_PRIVATE)
@@ -33,6 +39,14 @@ class MainActivity : ComponentActivity() {
             setdate.text = "Дата установки: $savedDate"
             calculateTwoWeeksLater(savedDate, twoWeeksLaterView)
         }
+        val savedDatec = sharedPreferences.getString("savedDate_c", null)
+        if (savedDatec != null) {
+            lastcock.text = "Последний раз дрочил: $savedDatec"
+        }
+        val savedDatecp = sharedPreferences.getString("savedDate_cp", null)
+        if (savedDatecp != null) {
+            lastcock_p.text = "Последний раз дрочил с порно: $savedDatecp"
+        }
 
         // Установка сегодняшней даты и сохранение треш
         setDateButton.setOnClickListener {
@@ -40,6 +54,20 @@ class MainActivity : ComponentActivity() {
             setdate.text = "Дата установки: $currentDate"
             saveDate(currentDate)
             calculateTwoWeeksLater(currentDate, twoWeeksLaterView)
+        }
+
+        lastcock_button.setOnClickListener {
+            val currentDate = LocalDate.now().format(formatter)
+            lastcock.text = "Последний раз дрочил: $currentDate"
+            saveDate_c(currentDate)
+        }
+
+        lastcock_p_button.setOnClickListener {
+            val currentDate = LocalDate.now().format(formatter)
+            lastcock_p.text = "C порно: $currentDate"
+            saveDate_cp(currentDate)
+            lastcock.text = "Последний раз дрочил: $currentDate"
+            saveDate_c(currentDate)
         }
 
 
@@ -59,6 +87,12 @@ class MainActivity : ComponentActivity() {
 
     private fun saveDate(date: String) {
         sharedPreferences.edit().putString("savedDate", date).apply()
+    }
+    private fun saveDate_c(date: String) {
+        sharedPreferences.edit().putString("savedDate_c", date).apply()
+    }
+    private fun saveDate_cp(date: String) {
+        sharedPreferences.edit().putString("savedDate_cp", date).apply()
     }
 
     private fun calculateTwoWeeksLater(date: String, view: TextView) {

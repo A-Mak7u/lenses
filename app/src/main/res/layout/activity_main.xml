@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Сегодняшняя дата"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"/>
+        android:textSize="28sp"
+        android:layout_marginTop="-36dp"/>
 
     <TextView
         android:id="@+id/setdate"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Установленная дата"
         android:textSize="18sp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="40dp"/>
 
     <!-- Дата + 2 недели -->
     <TextView
@@ -36,10 +36,38 @@
     <Button
         android:id="@+id/setDateButton"
         android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:text="Установить сегодняшнюю дату" />
+
+    <TextView
+        android:id="@+id/lastcock"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Установить сегодняшнюю дату"
-        android:layout_marginTop="240dp" />
+        android:text="Последний раз дрочил"
+        android:textSize="18sp"
+        android:layout_marginTop="44dp" />
 
+    <Button
+        android:id="@+id/lastcock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginTop="24dp"
+        android:text="Сброс" />
 
+    <TextView
+        android:id="@+id/lastcock_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C порно"
+        android:textSize="18sp"
+        android:layout_marginTop="44dp" />
+
+    <Button
+        android:id="@+id/lastcock_p_button"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginTop="24dp"
+        android:text="Сброс(" />
 
 </LinearLayout>
