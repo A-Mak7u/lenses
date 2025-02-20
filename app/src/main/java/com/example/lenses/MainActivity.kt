@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
         }
         val savedDatecp = sharedPreferences.getString("savedDate_cp", null)
         if (savedDatecp != null) {
-            lastcock_p.text = "Последний раз дрочил с порно: $savedDatecp"
+            lastcock_p.text = "С порно: $savedDatecp"
         }
 
         // Установка сегодняшней даты и сохранение треш
