@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#006064</color> <!-- Ваш основной цвет для кнопок -->
+    <color name="colorSecondary">#77D97C</color> <!-- Вторичный цвет для кнопок -->
+    <color name="color3">#9575CD</color>
 </resources>

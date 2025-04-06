@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="?android:attr/windowBackground">
 
     <!-- Сегодняшняя дата -->
     <TextView
@@ -12,16 +13,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Сегодняшняя дата"
-        android:textSize="28sp"
-        android:layout_marginTop="-36dp"/>
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/black"/>
 
+    <!-- Установленная дата -->
     <TextView
         android:id="@+id/setdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Установленная дата"
         android:textSize="18sp"
-        android:layout_marginTop="40dp"/>
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="16dp" />
 
     <!-- Дата + 2 недели -->
     <TextView
@@ -30,44 +35,69 @@
         android:layout_height="wrap_content"
         android:text="Дата + 2 недели"
         android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
         android:layout_marginTop="24dp" />
 
     <!-- Кнопка для установки даты -->
     <Button
         android:id="@+id/setDateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Установить сегодняшнюю дату"
+        android:textSize="16sp"
         android:layout_marginTop="24dp"
-        android:text="Установить сегодняшнюю дату" />
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"
+    android:layout_gravity="center_horizontal"
+    android:padding="12dp" />
 
+    <!-- Использование сильвера -->
     <TextView
         android:id="@+id/melir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Использовал сильвер"
         android:textSize="18sp"
-        android:layout_marginTop="44dp" />
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="40dp" />
 
+    <!-- Кнопка сброса -->
     <Button
         android:id="@+id/melir_button"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginTop="24dp"
-        android:text="Сброс" />
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Сброс"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/color3"
+        android:background="@drawable/button_background"
+    android:textColor="@android:color/white"
+    android:layout_gravity="center_horizontal"
+    android:padding="12dp" />
 
+    <!-- Подстригался -->
     <TextView
         android:id="@+id/parikm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Подстригался я"
         android:textSize="18sp"
-        android:layout_marginTop="44dp" />
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="40dp" />
 
+    <!-- Кнопка для стрижки -->
     <Button
         android:id="@+id/parikm_button"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginTop="24dp"
-        android:text="Сегодня!" />
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Сегодня!"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorSecondary"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"
+    android:layout_gravity="center_horizontal"
+    android:padding="12dp" />
 
 </LinearLayout>
