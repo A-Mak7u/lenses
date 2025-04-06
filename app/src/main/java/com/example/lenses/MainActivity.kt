@@ -22,10 +22,10 @@ class MainActivity : ComponentActivity() {
         val setdate: TextView = findViewById(R.id.setdate)
         val twoWeeksLaterView: TextView = findViewById(R.id.twoWeeksLater)
         val setDateButton: Button = findViewById(R.id.setDateButton)
-        val lastcock: TextView = findViewById(R.id.lastcock)
-        val lastcock_button: Button = findViewById(R.id.lastcock_button)
-        val lastcock_p: TextView = findViewById(R.id.lastcock_p)
-        val lastcock_p_button: Button = findViewById(R.id.lastcock_p_button)
+        val melir: TextView = findViewById(R.id.melir)
+        val melir_button: Button = findViewById(R.id.melir_button)
+        val parikm: TextView = findViewById(R.id.parikm)
+        val parikm_button: Button = findViewById(R.id.parikm_button)
 
         // Инициализация SharedPreferences
         sharedPreferences = getSharedPreferences("LensCyclePrefs", MODE_PRIVATE)
@@ -41,33 +41,31 @@ class MainActivity : ComponentActivity() {
         }
         val savedDatec = sharedPreferences.getString("savedDate_c", null)
         if (savedDatec != null) {
-            lastcock.text = "Последний раз дрочил: $savedDatec"
+            melir.text = "Использовал сильвер: $savedDatec"
         }
         val savedDatecp = sharedPreferences.getString("savedDate_cp", null)
         if (savedDatecp != null) {
-            lastcock_p.text = "С порно: $savedDatecp"
+            parikm.text = "Подстригся я: $savedDatecp"
         }
 
         // Установка сегодняшней даты и сохранение треш
         setDateButton.setOnClickListener {
             val currentDate = LocalDate.now().format(formatter)
             setdate.text = "Дата установки: $currentDate"
-            saveDate(currentDate)
+            saveDate("savedDate", currentDate)
             calculateTwoWeeksLater(currentDate, twoWeeksLaterView)
         }
 
-        lastcock_button.setOnClickListener {
+        melir_button.setOnClickListener {
             val currentDate = LocalDate.now().format(formatter)
-            lastcock.text = "Последний раз дрочил: $currentDate"
-            saveDate_c(currentDate)
+            melir.text = "Использовал сильвер: $currentDate"
+            saveDate("savedDate_c", currentDate)
         }
 
-        lastcock_p_button.setOnClickListener {
+        parikm_button.setOnClickListener {
             val currentDate = LocalDate.now().format(formatter)
-            lastcock_p.text = "C порно: $currentDate"
-            saveDate_cp(currentDate)
-            lastcock.text = "Последний раз дрочил: $currentDate"
-            saveDate_c(currentDate)
+            parikm.text = "Подстригся я: $currentDate"
+            saveDate("savedDate_cp", currentDate)
         }
 
 
@@ -85,14 +83,8 @@ class MainActivity : ComponentActivity() {
         todayDateView.text = "Сегодня: ${today.format(formatter)}" // Отображение текущей даты
     }
 
-    private fun saveDate(date: String) {
-        sharedPreferences.edit().putString("savedDate", date).apply()
-    }
-    private fun saveDate_c(date: String) {
-        sharedPreferences.edit().putString("savedDate_c", date).apply()
-    }
-    private fun saveDate_cp(date: String) {
-        sharedPreferences.edit().putString("savedDate_cp", date).apply()
+    private fun saveDate(key: String, date: String) {
+        sharedPreferences.edit().putString(key, date).apply()
     }
 
     private fun calculateTwoWeeksLater(date: String, view: TextView) {

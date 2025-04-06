@@ -41,33 +41,33 @@
         android:text="Установить сегодняшнюю дату" />
 
     <TextView
-        android:id="@+id/lastcock"
+        android:id="@+id/melir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Последний раз дрочил"
+        android:text="Использовал сильвер"
         android:textSize="18sp"
         android:layout_marginTop="44dp" />
 
     <Button
-        android:id="@+id/lastcock_button"
+        android:id="@+id/melir_button"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginTop="24dp"
         android:text="Сброс" />
 
     <TextView
-        android:id="@+id/lastcock_p"
+        android:id="@+id/parikm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="C порно"
+        android:text="Подстригался я"
         android:textSize="18sp"
         android:layout_marginTop="44dp" />
 
     <Button
-        android:id="@+id/lastcock_p_button"
+        android:id="@+id/parikm_button"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginTop="24dp"
-        android:text="Сброс(" />
+        android:text="Сегодня!" />
 
 </LinearLayout>
